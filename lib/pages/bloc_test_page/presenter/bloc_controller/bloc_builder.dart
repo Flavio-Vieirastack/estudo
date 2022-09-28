@@ -32,20 +32,19 @@ abstract class BlocBuilder implements BlocBuildWidget<BlocStates, Widget> {
             ),
             SliverGrid(
               delegate: SliverChildBuilderDelegate(
-                childCount: data.albuns.length,
+                childCount: 5,
                 (context, index) {
-                  final albuns = data.albuns[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  return const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: ColoredBox(
                       color: Colors.red,
-                      child: Text(albuns.title),
+                      child: Text('albuns.title'),
                     ),
                   );
                 },
               ),
               gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                  const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
