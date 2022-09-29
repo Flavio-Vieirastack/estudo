@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:project_test/core/extensions/sliver_extension.dart';
 class SliverPage extends StatelessWidget {
   const SliverPage({Key? key}) : super(key: key);
 
@@ -75,31 +76,29 @@ class SliverPage extends StatelessWidget {
               crossAxisCount: 2,
             ),
           ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: list
-                    .map(
-                      (e) => Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 150,
-                          width: 150,
-                          color: Colors.red,
-                          child: Center(
-                            child: Text(
-                              'Box adapter $e',
-                            ),
+          SizedBox(
+            height: 150,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: list
+                  .map(
+                    (e) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 150,
+                        width: 150,
+                        color: Colors.red,
+                        child: Center(
+                          child: Text(
+                            'Box adapter $e',
                           ),
                         ),
                       ),
-                    )
-                    .toList(),
-              ),
+                    ),
+                  )
+                  .toList(),
             ),
-          ),
+          ).sliverBox,
           SliverToBoxAdapter(
             child: SizedBox(
               height: 350,
