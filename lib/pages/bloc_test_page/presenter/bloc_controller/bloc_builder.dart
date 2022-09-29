@@ -75,7 +75,7 @@ abstract class BlocBuilder implements BlocBuildWidget<BlocStates, Widget> {
           ],
         );
       } else if (data is BlocError) {
-        return Text(data.message);
+        return Center(child: Text(data.message));
       } else {
         return const SizedBox.shrink();
       }
