@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_test/core/event_bus/event_helper.dart';
+import 'package:project_test/core/events/test_event.dart';
 
 class EventShotPage extends StatelessWidget {
   const EventShotPage({Key? key}) : super(key: key);
@@ -11,7 +13,11 @@ class EventShotPage extends StatelessWidget {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            SendEvent<TestEvent>().send(
+              TestEvent(message: 'Evento disparado'),
+            );
+          },
           child: const Text('Disparar evento'),
         ),
       ),

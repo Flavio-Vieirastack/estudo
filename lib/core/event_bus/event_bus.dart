@@ -11,7 +11,7 @@ class EventBus {
   EventBus.customController(StreamController controller)
       : _streamController = controller;
 
-  Stream<T> listen<T>() {
+  Stream<T> onEvent<T>() {
     if (T == dynamic) {
       return streamController.stream as Stream<T>;
     } else {
@@ -25,5 +25,9 @@ class EventBus {
 
   void close() {
     _streamController.close();
+  }
+
+  void drain() {
+    _streamController.stream.drain();
   }
 }
