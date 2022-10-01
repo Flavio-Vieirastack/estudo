@@ -23,6 +23,12 @@ class InitialPage extends StatelessWidget {
               child: const Text('Slivers'),
             ),
           ),
+          Center(
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed('/event'),
+              child: const Text('Event'),
+            ),
+          ),
         ],
       ),
     );
