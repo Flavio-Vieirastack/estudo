@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_test/core/event_bus/event_helper.dart';
+import 'package:project_test/core/execute_on_event/execute_on_event.dart';
 import 'package:project_test/core/inject/core_injects.dart';
 import 'package:project_test/initial_page.dart';
 import 'package:project_test/pages/bloc_test_page/module/route_test.dart';
@@ -8,6 +10,7 @@ import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart'
 
 void main() async {
   CoreInjects().init();
+
   runApp(const MyApp());
 }
 
@@ -16,7 +19,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+    GetEvent().get(
+      (event) => ExecuteOnEvent.execute(
+        event: event,
+        scaffoldMessengerKey: scaffoldMessengerKey,
+      ),
+    );
     return MaterialApp(
+      scaffoldMessengerKey: scaffoldMessengerKey,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

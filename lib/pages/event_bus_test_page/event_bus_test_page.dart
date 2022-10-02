@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:project_test/core/event_bus/event_helper.dart';
 import 'package:project_test/core/events/test_event.dart';
@@ -15,6 +17,7 @@ class _EventBusTestPageState extends State<EventBusTestPage> {
   void initState() {
     super.initState();
     GetEvent<TestEvent>().get((event) {
+      log('Event $event');
       if (mounted) {
         setState(() {
           message = event.message;
@@ -22,12 +25,7 @@ class _EventBusTestPageState extends State<EventBusTestPage> {
       }
     });
   }
-
-  @override
-  void dispose() {
-    super.dispose();
-    eventBus.drain();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
