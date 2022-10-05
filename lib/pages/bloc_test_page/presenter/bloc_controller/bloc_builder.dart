@@ -50,7 +50,7 @@ abstract class BlocBuilder implements BlocBuildWidget<BlocStates, Widget> {
               delegate: SliverChildBuilderDelegate(
                 childCount: data.albuns.length,
                 (context, index) {
-                  final albuns = data.albuns[index];
+                  final albuns = data.albuns.elementAt(index);
                   return ListTile(
                     title: Text(albuns.title),
                     leading: CircleAvatar(

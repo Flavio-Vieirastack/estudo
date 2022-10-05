@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+
 class EventBus {
   final StreamController _streamController;
 
@@ -30,4 +32,8 @@ class EventBus {
   void drain() {
     _streamController.stream.drain();
   }
+}
+
+class NavigatorKey {
+  static final navigatorKey = GlobalKey<NavigatorState>();
 }

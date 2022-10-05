@@ -4,7 +4,7 @@ import 'package:project_test/pages/bloc_test_page/domain/repository/album_reposi
 import '../entity/album_entity.dart';
 
 abstract class AlbumUsecase {
-  Future<Either<Exception, List<AlbumEntity>>> call();
+  Future<Either<Exception, Iterable<AlbumEntity>>> call();
 }
 
 class AlbumUsecaseImpl implements AlbumUsecase {
@@ -13,7 +13,7 @@ class AlbumUsecaseImpl implements AlbumUsecase {
     required AlbumRepository albumRepository,
   }) : _albumRepository = albumRepository;
   @override
-  Future<Either<Exception, List<AlbumEntity>>> call() async {
+  Future<Either<Exception, Iterable<AlbumEntity>>> call() async {
     return await _albumRepository();
   }
 }

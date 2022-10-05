@@ -11,7 +11,7 @@ class AlbumRepositoryImpl implements AlbumRepository {
     required AlbumDatasource albumDatasource,
   }) : _albumDatasource = albumDatasource;
   @override
-  Future<Either<Exception, List<AlbumEntity>>> call() async {
+  Future<Either<Exception, Iterable<AlbumEntity>>> call() async {
     try {
       final result = await _albumDatasource();
       return Right(result);

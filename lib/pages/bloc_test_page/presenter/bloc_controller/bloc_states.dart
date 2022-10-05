@@ -16,7 +16,7 @@ class BlocError extends BlocStates {
 }
 
 class BlocSucess extends BlocStates {
-  final List<AlbumEntity> albuns;
+  final Iterable<AlbumEntity> albuns;
   BlocSucess({
     required this.albuns,
   });
