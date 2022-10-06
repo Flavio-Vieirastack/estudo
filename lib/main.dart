@@ -5,6 +5,7 @@ import 'package:project_test/core/execute_on_event/execute_on_event.dart';
 import 'package:project_test/core/inject/core_injects.dart';
 import 'package:project_test/initial_page.dart';
 import 'package:project_test/pages/bloc_test_page/module/route_test.dart';
+import 'package:project_test/pages/coffe/coffee_page.dart';
 import 'package:project_test/pages/event_bus_test_page/event_bus_test_page.dart';
 import 'package:project_test/pages/event_bus_test_page/event_shot_page.dart';
 import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/slivers': (context) => const SliverPage(),
         '/event': (context) => const EventBusTestPage(),
         '/event-shot': (context) => const EventShotPage(),
+        '/coffee': (context) => const CoffeePage(),
       },
     );
   }

@@ -29,6 +29,12 @@ class InitialPage extends StatelessWidget {
               child: const Text('Event'),
             ),
           ),
+          Center(
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed('/coffee'),
+              child: const Text('Coffee'),
+            ),
+          ),
         ],
       ),
     );
