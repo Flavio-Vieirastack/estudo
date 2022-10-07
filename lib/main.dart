@@ -9,6 +9,7 @@ import 'package:project_test/pages/coffe/coffee_page.dart';
 import 'package:project_test/pages/event_bus_test_page/event_bus_test_page.dart';
 import 'package:project_test/pages/event_bus_test_page/event_shot_page.dart';
 import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart';
+import 'package:project_test/pages/testes/secure_storage_teste.dart';
 
 void main() async {
   CoreInjects().init();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         '/event': (context) => const EventBusTestPage(),
         '/event-shot': (context) => const EventShotPage(),
         '/coffee': (context) => const CoffeePage(),
+        '/secure': (context) => const SecureStorageTeste(),
       },
     );
   }
