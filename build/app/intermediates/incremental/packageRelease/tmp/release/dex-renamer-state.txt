@@ -1,4 +1,4 @@
-#Thu Sep 29 13:38:06 BRT 2022
+#Thu Oct 06 15:20:53 BRT 2022
 base.0=/Users/flaviovieira/Documents/Testes/flutter/project_test/estudo/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
