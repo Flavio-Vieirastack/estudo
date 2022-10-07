@@ -2,6 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+
+SecureStorageMethods get storage => SecureStorageMethods();
+
 class SecureStorageMethods {
   AndroidOptions _getAndroidOptions() => const AndroidOptions(
         encryptedSharedPreferences: true,
@@ -25,7 +28,6 @@ class SecureStorageMethods {
       aOptions: _getAndroidOptions(),
       iOptions: options,
     );
-    log(data ?? 'Sem dados');
     return data;
   }
 }
