@@ -10,7 +10,7 @@ class UserModel {
     required this.email,
   });
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> _toMap() {
     final result = <String, dynamic>{};
 
     result.addAll({'name': name});
@@ -26,10 +26,6 @@ class UserModel {
     );
   }
 
-
-  factory UserModel.fromJson(String source) =>
-      UserModel.fromMap(json.decode(source));
-
   @override
   String toString() => 'UserModel(name: $name, email: $email)';
 
@@ -40,6 +36,6 @@ class UserModel {
   }
 
   Future<void> saveInCache() async {
-    await storage.save(key: 'teste', value: jsonEncode(toMap()));
+    await storage.save(key: 'teste', value: jsonEncode(_toMap()));
   }
 }

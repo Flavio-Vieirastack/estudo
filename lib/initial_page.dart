@@ -1,4 +1,8 @@
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -9,7 +13,7 @@ class InitialPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Main page'),
       ),
-      body: Column(
+      body: ListView(
         children: [
           Center(
             child: TextButton(
@@ -39,6 +43,19 @@ class InitialPage extends StatelessWidget {
             child: TextButton(
               onPressed: () => Navigator.of(context).pushNamed('/secure'),
               child: const Text('secure'),
+            ),
+          ),
+          Center(
+            child: TextButton(
+              onPressed: () async {
+                String result = await sendSMS(
+                    message: 'message',
+                    recipients: ['88992827028']).catchError((onError) {
+                  log(onError.toString());
+                });
+                log(result.toString());
+              },
+              child: const Text('Enviar sms'),
             ),
           ),
         ],
