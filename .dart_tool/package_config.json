@@ -320,6 +320,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "socket_io_client",
+      "rootUri": "file:///Users/flaviovieira/.pub-cache/hosted/pub.dartlang.org/socket_io_client-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "socket_io_common",
+      "rootUri": "file:///Users/flaviovieira/.pub-cache/hosted/pub.dartlang.org/socket_io_common-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_map_stack_trace",
       "rootUri": "file:///Users/flaviovieira/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-2.1.0",
       "packageUri": "lib/",
@@ -476,7 +488,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-08T18:10:37.509937Z",
+  "generated": "2022-10-11T11:50:53.572659Z",
   "generator": "pub",
   "generatorVersion": "2.18.0"
 }

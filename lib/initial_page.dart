@@ -1,11 +1,22 @@
-
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
 
-class InitialPage extends StatelessWidget {
+class InitialPage extends StatefulWidget {
   const InitialPage({Key? key}) : super(key: key);
+
+  @override
+  State<InitialPage> createState() => _InitialPageState();
+}
+
+class _InitialPageState extends State<InitialPage> {
+  final controller = TextEditingController();
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +54,22 @@ class InitialPage extends StatelessWidget {
             child: TextButton(
               onPressed: () => Navigator.of(context).pushNamed('/secure'),
               child: const Text('secure'),
+            ),
+          ),
+          TextFormField(
+            controller: controller,
+            decoration: const InputDecoration(
+              hintText: 'Digite sua sala',
+              labelText: 'Digite sua sala',
+            ),
+          ),
+          Center(
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed(
+                '/socket',
+                arguments: controller.text,
+              ),
+              child: const Text('Socket'),
             ),
           ),
           Center(
