@@ -27,9 +27,11 @@ class _SocketTestPageState extends State<SocketTestPage> {
   final streamSocket = StreamSocket();
   List<MessageModel> messages = [];
   late final String? room;
-  final messageEvent = 'createRoom';
+  final createRoom = 'createRoom';
+  final messageEvent = 'message';
   final joinEvent = 'join';
   final findAllEvent = 'findAllChat';
+  final findAllMessages = 'allMessages';
   final io.Socket socket = io.io(
     'http://localhost:3000',
     io.OptionBuilder().setTransports(['websocket']).build(),
@@ -38,19 +40,17 @@ class _SocketTestPageState extends State<SocketTestPage> {
   connect() {
     socket.onConnect((data) {
       log('Connected');
-      socket.emit(findAllEvent, (data) {
-        log('all messages $data');
-      });
-      socket.emit(joinEvent, [
+      
+      socket.emit(
+        joinEvent,
         MessageModel(
-          firebaseId: 'firebaseId',
+          firebaseId: room ?? '',
           sendImage: 'sendImage',
           userName: 'userName',
-        ),
-        (data) {
-          log('Join event data $data');
-        }
-      ]);
+          cliendId: 1,
+        ).toMap(),
+      );
+      socket.on('message', (data) => log(data.toString()));
     });
     socket.onConnectError((data) => log('error $data'));
     socket.onDisconnect((data) => log('disconnected $data'));
@@ -58,12 +58,13 @@ class _SocketTestPageState extends State<SocketTestPage> {
 
   sendMessage() {
     socket.emit(
-      messageEvent,
+      createRoom,
       MessageModel(
         userName: 'name1',
-        firebaseId: 'a',
+        firebaseId: room ?? '',
         sendImage: 'sendImage',
         message: controller.text,
+        cliendId: 1
       ).toMap(),
     );
     controller.clear();
@@ -79,13 +80,26 @@ class _SocketTestPageState extends State<SocketTestPage> {
   @override
   void initState() {
     super.initState();
-    connect();
-    socket.on(messageEvent, (data) {
-      log('dados reecebidos da mensagem $messageEvent');
-      streamSocket.addResponse(data['message']);
-    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       room = ModalRoute.of(context)?.settings.arguments as String;
+      connect();
+      socket.on(messageEvent, (data) {
+        log('dados reecebidos da mensagem $messageEvent');
+        streamSocket.addResponse(data['message']);
+      });
+      socket.emit(
+        findAllEvent,
+        MessageModel(
+          firebaseId: room ?? '',
+          sendImage: 'sendImage',
+          userName: 'userName',
+          cliendId: 1,
+        ).toMap(),
+      );
+      socket.on(findAllMessages, (data) {
+        log(data.toString());
+      });
     });
   }
 

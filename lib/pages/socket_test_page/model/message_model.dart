@@ -4,8 +4,8 @@ class MessageModel {
   final String firebaseId;
   final String sendImage;
   final String userName;
-  final String? cliendId;
-  final String? enterpriseId;
+  final int? cliendId;
+  final int? enterpriseId;
   final String? message;
   MessageModel({
     required this.firebaseId,
