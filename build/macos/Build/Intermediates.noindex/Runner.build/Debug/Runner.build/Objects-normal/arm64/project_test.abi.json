@@ -330,6 +330,20 @@
       "moduleName": "project_test"
     },
     {
+      "kind": "Import",
+      "name": "flutter_secure_storage_macos",
+      "printedName": "flutter_secure_storage_macos",
+      "declKind": "Import",
+      "moduleName": "project_test"
+    },
+    {
+      "kind": "Import",
+      "name": "url_launcher_macos",
+      "printedName": "url_launcher_macos",
+      "declKind": "Import",
+      "moduleName": "project_test"
+    },
+    {
       "kind": "Function",
       "name": "RegisterGeneratedPlugins",
       "printedName": "RegisterGeneratedPlugins(registry:)",

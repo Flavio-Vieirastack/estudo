@@ -1,0 +1,8 @@
+2022/10/11-19:35:47.509 b803 Reusing MANIFEST /private/var/folders/94/d2ynrxmj4l51wlqrcltcwv5r0000gp/T/flutter_tools.sLyApM/flutter_tools_chrome_device.8NMEdF/Default/shared_proto_db/MANIFEST-000001
+2022/10/11-19:35:47.509 b803 Recovering log #4
+2022/10/11-19:35:47.510 b803 (ignoring error) /private/var/folders/94/d2ynrxmj4l51wlqrcltcwv5r0000gp/T/flutter_tools.sLyApM/flutter_tools_chrome_device.8NMEdF/Default/shared_proto_db/000004.log: dropping 763 bytes; Corruption: missing start of fragmented record(2)
+2022/10/11-19:35:47.511 b803 Reusing old log /private/var/folders/94/d2ynrxmj4l51wlqrcltcwv5r0000gp/T/flutter_tools.sLyApM/flutter_tools_chrome_device.8NMEdF/Default/shared_proto_db/000004.log 
+2022/10/11-19:35:47.511 b803 Delete type=0 #3
+2022/10/11-19:36:06.276 e103 Level-0 table #8: started
+2022/10/11-19:36:06.336 e103 Level-0 table #8: 126272 bytes OK
+2022/10/11-19:36:06.374 e103 Delete type=0 #4

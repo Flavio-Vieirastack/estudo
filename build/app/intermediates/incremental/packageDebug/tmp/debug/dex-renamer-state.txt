@@ -1,4 +1,4 @@
-#Sat Oct 08 15:21:47 BRT 2022
+#Tue Oct 11 11:23:15 BRT 2022
 base.0=/Users/flaviovieira/Documents/Testes/flutter/project_test/estudo/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

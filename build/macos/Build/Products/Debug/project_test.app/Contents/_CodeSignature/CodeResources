@@ -27,10 +27,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ujZ+PF10ruYNy5MLjmx3WDoXF6o=
+			C26Yfg0NZsa0QmjSVWFYzyfT3kw=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"ba367e3c5d74aee60dcb930b8e6c77583a1717aa"</string>
+			<string>cdhash H"0b6e987e0d0d66c6b44268d2556158cf27d3de4c"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
@@ -40,6 +40,15 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"8792856bb93e5f1ebaa270bc9ef8729f13bf5c2d"</string>
+		</dict>
+		<key>Frameworks/flutter_secure_storage_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			s0VAD3naI2FOBDroYPLcpsj+olo=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"b345400f79da23614e043ae860f2dca6c8fea25a"</string>
 		</dict>
 		<key>Frameworks/libswiftAppKit.dylib</key>
 		<dict>
@@ -193,6 +202,15 @@
 			</data>
 			<key>requirement</key>
 			<string>cdhash H"3406aab10f486b91c2d9334de341504de56a5631" or cdhash H"73e04119822f2d8cd5eeb426ddac2b2b98295def"</string>
+		</dict>
+		<key>Frameworks/url_launcher_macos.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			3FRumntRujZk4CPyND+YnBplPJA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"dc546e9a7b51ba3664e023f2343f989c1a653c90"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>

@@ -1,7 +1,5 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 class CoffeePage extends StatefulWidget {
   const CoffeePage({Key? key}) : super(key: key);
@@ -131,7 +129,7 @@ class _CoffeePageState extends State<CoffeePage> {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
-        label: Text('Data'),
+        label: const Text('Data'),
         onPressed: (){},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

@@ -3,12 +3,14 @@ import 'dart:convert';
 class MessageModel {
   final String firebaseId;
   final String sendImage;
+  final String userName;
   final String? cliendId;
   final String? enterpriseId;
   final String? message;
   MessageModel({
     required this.firebaseId,
     required this.sendImage,
+    required this.userName,
     this.message,
     this.cliendId,
     this.enterpriseId,
@@ -28,18 +30,19 @@ class MessageModel {
     if (enterpriseId != null) {
       result.addAll({'enterpriseId': enterpriseId});
     }
+    result.addAll({'sendername': userName});
 
     return result;
   }
 
   factory MessageModel.fromMap(Map<String, dynamic> map) {
     return MessageModel(
-      firebaseId: map['firebaseUuid'] ?? '',
-      sendImage: map['senderImageUrlImage'] ?? '',
-      cliendId: map['clientId'],
-      enterpriseId: map['enterpriseId'],
-      message: map['message'],
-    );
+        firebaseId: map['firebaseUuid'] ?? '',
+        sendImage: map['senderImageUrlImage'] ?? '',
+        cliendId: map['clientId'],
+        enterpriseId: map['enterpriseId'],
+        message: map['message'],
+        userName: map['sendername']);
   }
 
   String toJson() => json.encode(toMap());

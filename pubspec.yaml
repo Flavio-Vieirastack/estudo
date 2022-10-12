@@ -38,6 +38,7 @@ dependencies:
   flutter_getit:
      git: https://github.com/Flavio-Vieirastack/getit_flutter.git
   socket_io_client: ^2.0.0
+  flutter_pretty_dio_logger: ^2.0.3
 
 
   # The following adds the Cupertino Icons font to your application.
