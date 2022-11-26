@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_test/core/event_bus/event_bus.dart';
-import 'package:project_test/core/event_bus/event_helper.dart';
 import 'package:project_test/core/execute_on_event/execute_on_event.dart';
 import 'package:project_test/core/inject/core_injects.dart';
 import 'package:project_test/initial_page.dart';
@@ -11,6 +10,8 @@ import 'package:project_test/pages/event_bus_test_page/event_shot_page.dart';
 import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart';
 import 'package:project_test/pages/socket_test_page/socket_test_page.dart';
 import 'package:project_test/pages/testes/secure_storage_teste.dart';
+
+import 'core/event_bus/event_helper.dart';
 
 void main() async {
   CoreInjects().init();

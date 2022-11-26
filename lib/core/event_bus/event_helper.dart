@@ -10,7 +10,6 @@ class GetEvent<T> {
     eventBus.onEvent<T>().listen(
       (event) {
         log('Event captured $event');
-
         executeOnEvent.call(event);
       },
     );

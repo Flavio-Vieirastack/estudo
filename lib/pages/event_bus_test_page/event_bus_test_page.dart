@@ -1,8 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:project_test/core/event_bus/event_helper.dart';
 import 'package:project_test/core/events/test_event.dart';
+
+import '../../core/event_bus/event_helper.dart';
 
 class EventBusTestPage extends StatefulWidget {
   const EventBusTestPage({Key? key}) : super(key: key);
