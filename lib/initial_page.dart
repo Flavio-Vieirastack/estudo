@@ -34,6 +34,12 @@ class _InitialPageState extends State<InitialPage> {
           ),
           Center(
             child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed('/chat'),
+              child: const Text('Chat'),
+            ),
+          ),
+          Center(
+            child: TextButton(
               onPressed: () => Navigator.of(context).pushNamed('/slivers'),
               child: const Text('Slivers'),
             ),

@@ -5,10 +5,9 @@ import '../../client_and_user/create_client_model.dart';
 import '../../domain/entity/chat_entity.dart';
 import 'chat_messages_model.dart';
 
-
 class ChatModel extends ChatEntity {
-  final CreateClientModel createClientModel;
-  final CompanyInitialDataModel companyInitialDataModel;
+  final CreateClientModel? createClientModel;
+  final CompanyInitialDataModel? companyInitialDataModel;
   final List<ChatMessagesModel> chatMessagesModel;
   ChatModel({
     super.id,
@@ -16,8 +15,8 @@ class ChatModel extends ChatEntity {
     required super.createChat,
     required super.companyId,
     required super.clientId,
-    required this.createClientModel,
-    required this.companyInitialDataModel,
+    this.createClientModel,
+    this.companyInitialDataModel,
     required this.chatMessagesModel,
   }) : super(
           companyInitialDataEntity: companyInitialDataModel,
@@ -67,12 +66,6 @@ class ChatModel extends ChatEntity {
       createChat: chatEntity.createChat,
       companyId: chatEntity.companyId,
       clientId: chatEntity.clientId,
-      createClientModel: CreateClientModel.fromEntity(
-        chatEntity.clientEntity,
-      ),
-      companyInitialDataModel: CompanyInitialDataModel.fromEntity(
-        chatEntity.companyInitialDataEntity,
-      ),
       chatMessagesModel: chatEntity.chatMessages
           .map((e) => ChatMessagesModel.fromEntity(e))
           .toList(),

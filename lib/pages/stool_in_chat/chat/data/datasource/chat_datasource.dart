@@ -7,7 +7,6 @@ import '../model/chat_messages_model.dart';
 import '../model/chat_model.dart';
 import '../model/create_chat_return_model.dart';
 
-
 abstract class ChatDatasource {
   void createOrUpdateRoomMessages(
     ChatModel chatModel,

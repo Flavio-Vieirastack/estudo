@@ -7,6 +7,8 @@ import 'package:project_test/pages/event_bus_test_page/event_bus_test_page.dart'
 import 'package:project_test/pages/event_bus_test_page/event_shot_page.dart';
 import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart';
 import 'package:project_test/pages/socket_test_page/socket_test_page.dart';
+import 'package:project_test/pages/stool_in_chat/chat/presenter/core/chat_params.dart';
+import 'package:project_test/pages/stool_in_chat/chat/presenter/page/chat_page.dart';
 import 'package:project_test/pages/testes/secure_storage_teste.dart';
 
 import 'core/event_bus/event_helper.dart';
@@ -44,6 +46,10 @@ class MyApp extends StatelessWidget {
         '/coffee': (context) => const CoffeePage(),
         '/secure': (context) => const SecureStorageTeste(),
         '/socket': (context) => const SocketTestPage(),
+        '/chat': (context) => ChatPage(
+              chatParams:
+                  ModalRoute.of(context)?.settings.arguments as ChatParams,
+            ),
       },
     );
   }
