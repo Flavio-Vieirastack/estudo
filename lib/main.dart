@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_test/core/event_bus/event_bus.dart';
-import 'package:project_test/core/execute_on_event/execute_on_event.dart';
 import 'package:project_test/initial_page.dart';
 import 'package:project_test/pages/coffe/coffee_page.dart';
-import 'package:project_test/pages/event_bus_test_page/event_bus_test_page.dart';
-import 'package:project_test/pages/event_bus_test_page/event_shot_page.dart';
+import 'package:project_test/pages/dynamic_widget/dynamic_widget_page.dart';
 import 'package:project_test/pages/slivers_test_page/presenter/sliver_page.dart';
 import 'package:project_test/pages/socket_test_page/socket_test_page.dart';
-import 'package:project_test/pages/stool_in_chat/chat/presenter/core/chat_params.dart';
-import 'package:project_test/pages/stool_in_chat/chat/presenter/page/chat_page.dart';
 import 'package:project_test/pages/testes/secure_storage_teste.dart';
-
-import 'core/event_bus/event_helper.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -23,12 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
-    GetEvent().get(
-      (event) => ExecuteOnEvent.execute(
-        event: event,
-        scaffoldMessengerKey: scaffoldMessengerKey,
-      ),
-    );
+
     return MaterialApp(
       scaffoldMessengerKey: scaffoldMessengerKey,
       title: 'Flutter Demo',
@@ -41,15 +30,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const InitialPage(),
         '/slivers': (context) => const SliverPage(),
-        '/event': (context) => const EventBusTestPage(),
-        '/event-shot': (context) => const EventShotPage(),
         '/coffee': (context) => const CoffeePage(),
         '/secure': (context) => const SecureStorageTeste(),
         '/socket': (context) => const SocketTestPage(),
-        '/chat': (context) => ChatPage(
-              chatParams:
-                  ModalRoute.of(context)?.settings.arguments as ChatParams,
-            ),
+        '/dynamic_widget': (context) => const DynamicWidgetPage(),
       },
     );
   }

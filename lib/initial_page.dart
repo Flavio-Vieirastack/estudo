@@ -1,7 +1,5 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_sms/flutter_sms.dart';
 
 class InitialPage extends StatefulWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -30,12 +28,6 @@ class _InitialPageState extends State<InitialPage> {
             child: TextButton(
               onPressed: () => Navigator.of(context).pushNamed('/bloc'),
               child: const Text('Bloc'),
-            ),
-          ),
-          Center(
-            child: TextButton(
-              onPressed: () => Navigator.of(context).pushNamed('/chat'),
-              child: const Text('Chat'),
             ),
           ),
           Center(
@@ -80,15 +72,10 @@ class _InitialPageState extends State<InitialPage> {
           ),
           Center(
             child: TextButton(
-              onPressed: () async {
-                String result = await sendSMS(
-                    message: 'message',
-                    recipients: ['88992827028']).catchError((onError) {
-                  log(onError.toString());
-                });
-                log(result.toString());
-              },
-              child: const Text('Enviar sms'),
+              onPressed: () => Navigator.of(context).pushNamed(
+                '/dynamic_widget',
+              ),
+              child: const Text('Dynamic-widget'),
             ),
           ),
         ],
