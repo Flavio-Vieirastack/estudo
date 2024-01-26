@@ -17,6 +17,11 @@ class CacheArticleData {
         '/photos',
       );
       final resultList = result.data as List;
+      await Future.delayed(
+        const Duration(
+          milliseconds: 1500,
+        ),
+      );
       return resultList
           .map(
             (e) => AlbunsModel.fromJson(e),
