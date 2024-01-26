@@ -37,8 +37,11 @@ dependencies:
   flutter_sms: ^2.3.3
   flutter_getit:
      git: https://github.com/Flavio-Vieirastack/getit_flutter.git
+  flutter_tools:
+    git: https://github.com/Flavio-Vieirastack/flutter-tools
   socket_io_client: ^2.0.0
   flutter_pretty_dio_logger: ^2.0.3
+  get_it: ^7.6.7
   
 
 

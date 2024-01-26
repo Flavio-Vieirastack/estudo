@@ -78,6 +78,14 @@ class _InitialPageState extends State<InitialPage> {
               child: const Text('Dynamic-widget'),
             ),
           ),
+          Center(
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed(
+                '/cache',
+              ),
+              child: const Text('cache and api'),
+            ),
+          ),
         ],
       ),
     );
