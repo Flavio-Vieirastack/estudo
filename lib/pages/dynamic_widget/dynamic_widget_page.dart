@@ -10,7 +10,7 @@ class DynamicWidgetPage extends StatelessWidget {
         title: const Text('Dynamic widget'),
       ),
       body: ListView(
-        children: [],
+        children: const [],
       ),
     );
   }

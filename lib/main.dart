@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:project_test/core/event_bus/event_bus.dart';
 import 'package:project_test/core/inject/core_injects.dart';
 import 'package:project_test/initial_page.dart';
@@ -11,6 +12,7 @@ import 'package:project_test/pages/testes/secure_storage_teste.dart';
 
 void main() async {
   CoreInjects.inject();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
